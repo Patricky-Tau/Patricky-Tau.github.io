@@ -119,24 +119,6 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/nc/9033/c/</loc>
-    
-    <lastmod>2022-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tau.gay/cf/SP32079/</loc>
-    
-    <lastmod>2022-08-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tau.gay/codestyle/</loc>
     
     <lastmod>2022-08-30</lastmod>
@@ -488,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1712/a/</loc>
+    <loc>https://tau.gay/cf/1579/e2/</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -497,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1579/e2/</loc>
+    <loc>https://tau.gay/cf/1712/a/</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -515,7 +497,7 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1712/e1/</loc>
+    <loc>https://tau.gay/cf/1712/d/</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -524,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1712/d/</loc>
+    <loc>https://tau.gay/cf/1712/e1/</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -648,14 +630,14 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/tags/%E6%95%B0%E8%AE%BA/</loc>
+    <loc>https://tau.gay/tags/%E4%BA%8C%E5%88%86/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tau.gay/tags/%E4%BA%8C%E5%88%86/</loc>
+    <loc>https://tau.gay/tags/%E6%95%B0%E8%AE%BA/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -669,14 +651,14 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://tau.gay/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tau.gay/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://tau.gay/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -753,6 +735,13 @@
   </url>
   
   <url>
+    <loc>https://tau.gay/tags/%E9%98%BF%E5%9C%86/</loc>
+    <lastmod>2022-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tau.gay/tags/%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E8%B7%9D%E7%A6%BB/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -761,13 +750,6 @@
   
   <url>
     <loc>https://tau.gay/tags/%E8%83%8C%E5%8C%85/</loc>
-    <lastmod>2022-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tau.gay/tags/%E9%98%BF%E5%9C%86/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -789,13 +771,6 @@
   
   <url>
     <loc>https://tau.gay/tags/trie/</loc>
-    <lastmod>2022-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tau.gay/tags/MEX/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -874,14 +849,14 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1719/</loc>
+    <loc>https://tau.gay/cf/1579/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/1579/</loc>
+    <loc>https://tau.gay/cf/1719/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -972,21 +947,7 @@
   </url>
   
   <url>
-    <loc>https://tau.gay/cf/SP32079/</loc>
-    <lastmod>2022-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tau.gay/nc/11255/</loc>
-    <lastmod>2022-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tau.gay/nc/9033/</loc>
     <lastmod>2022-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

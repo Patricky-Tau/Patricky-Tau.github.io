@@ -499,16 +499,44 @@ LIS\)&lt;/span&gt;（位置不同就算做不同）？&lt;/p&gt;</summary>
     
     
     
-    <category term="acm" scheme="https://tau.gay/acm/"/>
-    
     <category term="51nod" scheme="https://tau.gay/51nod/"/>
     
+    <category term="acm" scheme="https://tau.gay/acm/"/>
     
-    <category term="树状数组" scheme="https://tau.gay/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
     <category term="AWESOME" scheme="https://tau.gay/tags/AWESOME/"/>
     
+    <category term="树状数组" scheme="https://tau.gay/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
     <category term="LIS" scheme="https://tau.gay/tags/LIS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF1313C1</title>
+    <link href="https://tau.gay/cf/1313/c1/"/>
+    <id>https://tau.gay/cf/1313/c1/</id>
+    <published>2022-08-20T17:41:42.000Z</published>
+    <updated>2022-08-21T17:59:34.094Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>是 <a href="/cf/1313/c2/">CF1313C2</a> 的简单版。</p><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;是 &lt;a href=&quot;/cf/1313/c2/&quot;&gt;CF1313C2&lt;/a&gt; 的简单版。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="acm" scheme="https://tau.gay/acm/"/>
+    
+    <category term="cf" scheme="https://tau.gay/cf/"/>
+    
+    <category term="1313" scheme="https://tau.gay/cf/1313/"/>
+    
+    
+    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
+    
+    <category term="dp" scheme="https://tau.gay/tags/dp/"/>
     
   </entry>
   
@@ -530,34 +558,6 @@ a_k\)&lt;/span&gt;
 的情况，即不能有「一幢楼左右都有比他高的大厦（不必相邻）」。&lt;/p&gt;
 &lt;p&gt;求 &lt;span class=&quot;math inline&quot;&gt;\(\max \displaystyle \left\{\sum_{i =
 1}^n\{A\}\right\}\)&lt;/span&gt; 对应的一组方案。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="acm" scheme="https://tau.gay/acm/"/>
-    
-    <category term="cf" scheme="https://tau.gay/cf/"/>
-    
-    <category term="1313" scheme="https://tau.gay/cf/1313/"/>
-    
-    
-    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
-    
-    <category term="dp" scheme="https://tau.gay/tags/dp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CF1313C1</title>
-    <link href="https://tau.gay/cf/1313/c1/"/>
-    <id>https://tau.gay/cf/1313/c1/</id>
-    <published>2022-08-20T17:41:42.000Z</published>
-    <updated>2022-08-21T17:59:34.094Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>是 <a href="/cf/1313/c2/">CF1313C2</a> 的简单版。</p><span id="more"></span>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
-&lt;p&gt;是 &lt;a href=&quot;/cf/1313/c2/&quot;&gt;CF1313C2&lt;/a&gt; 的简单版。&lt;/p&gt;</summary>
     
     
     
@@ -1620,32 +1620,6 @@ class=&quot;math inline&quot;&gt;\(\displaystyle \sum_{i = 1} ^ n
   </entry>
   
   <entry>
-    <title>CF1A</title>
-    <link href="https://tau.gay/cf/1/a/"/>
-    <id>https://tau.gay/cf/1/a/</id>
-    <published>2022-08-11T08:39:20.000Z</published>
-    <updated>2022-08-21T17:59:34.101Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>至少用多少个 <span class="math inline">\(a \times a\)</span>的石板，才能完全填满 <span class="math inline">\(n \times m\)</span>的矩形？</p><span id="more"></span><h2 id="解答">解答</h2><p><span class="math inline">\(\left\lceil\dfrac{n}{a}\right\rceil\times \left\lceil\dfrac{m}{a}\right\rceil\)</span> 即为所求。</p><details><summary>展开参考代码</summary><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>), ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    ll n, m, a;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; a;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; ((n + a - <span class="number">1</span>) / a) * ((m + a - <span class="number">1</span>) / a) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ^ <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></details>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
-&lt;p&gt;至少用多少个 &lt;span class=&quot;math inline&quot;&gt;\(a \times a\)&lt;/span&gt;
-的石板，才能完全填满 &lt;span class=&quot;math inline&quot;&gt;\(n \times m\)&lt;/span&gt;
-的矩形？&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="acm" scheme="https://tau.gay/acm/"/>
-    
-    <category term="cf" scheme="https://tau.gay/cf/"/>
-    
-    <category term="1" scheme="https://tau.gay/cf/1/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>CF1B</title>
     <link href="https://tau.gay/cf/1/b/"/>
     <id>https://tau.gay/cf/1/b/</id>
@@ -1689,6 +1663,32 @@ class=&quot;math inline&quot;&gt;\(\verb|ZZ|\)&lt;/span&gt;
     <category term="正则表达式" scheme="https://tau.gay/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     <category term="TODO" scheme="https://tau.gay/tags/TODO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF1A</title>
+    <link href="https://tau.gay/cf/1/a/"/>
+    <id>https://tau.gay/cf/1/a/</id>
+    <published>2022-08-11T08:39:20.000Z</published>
+    <updated>2022-08-21T17:59:34.101Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>至少用多少个 <span class="math inline">\(a \times a\)</span>的石板，才能完全填满 <span class="math inline">\(n \times m\)</span>的矩形？</p><span id="more"></span><h2 id="解答">解答</h2><p><span class="math inline">\(\left\lceil\dfrac{n}{a}\right\rceil\times \left\lceil\dfrac{m}{a}\right\rceil\)</span> 即为所求。</p><details><summary>展开参考代码</summary><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>), ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    ll n, m, a;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; a;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; ((n + a - <span class="number">1</span>) / a) * ((m + a - <span class="number">1</span>) / a) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ^ <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></details>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;至少用多少个 &lt;span class=&quot;math inline&quot;&gt;\(a \times a\)&lt;/span&gt;
+的石板，才能完全填满 &lt;span class=&quot;math inline&quot;&gt;\(n \times m\)&lt;/span&gt;
+的矩形？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="acm" scheme="https://tau.gay/acm/"/>
+    
+    <category term="cf" scheme="https://tau.gay/cf/"/>
+    
+    <category term="1" scheme="https://tau.gay/cf/1/"/>
+    
     
   </entry>
   

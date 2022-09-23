@@ -6,7 +6,7 @@
   <link href="https://tau.gay/atom.xml" rel="self"/>
   
   <link href="https://tau.gay/"/>
-  <updated>2022-09-19T04:20:54.792Z</updated>
+  <updated>2022-09-23T15:48:44.441Z</updated>
   <id>https://tau.gay/</id>
   
   <author>
@@ -15,6 +15,115 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CC2020-ChangChun-A</title>
+    <link href="https://tau.gay/cc/2020/changchun/a/"/>
+    <id>https://tau.gay/cc/2020/changchun/a/</id>
+    <published>2022-09-23T14:54:21.000Z</published>
+    <updated>2022-09-23T15:48:44.441Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>购买优惠券，以下是首充优惠。<span class="hidden">手冲，嘿嘿🤤。</span></p><p><span class="math display">\[\begin{array}{|c|c|c|} \hline \text{Price (RMB yuan)} &amp; \text{Normalamount (coupons)} &amp; \text{First recharge reward (coupons)} \\ \hline1 &amp; 10 &amp; 8 \\ \hline 6 &amp; 60 &amp; 18 \\ \hline 28 &amp; 280&amp; 28 \\ \hline 88 &amp; 880 &amp; 58 \\ \hline 198 &amp; 1980 &amp;128 \\ \hline 328 &amp; 3280 &amp; 198 \\ \hline 648 &amp; 6480 &amp;388 \\ \hline \end{array}\]</span></p><p>例如 <span class="math inline">\(￥100\)</span> 可以购买 <spanclass="math inline">\(\underbrace{880 + 58}_{88} + \underbrace{60 +18}_{6} + \underbrace{10 + 8}_{1} + 5 \times 10 = 1084\)</span></p><span id="more"></span><p><a href="https://codeforces.com/gym/102832/problem/A"class="uri">https://codeforces.com/gym/102832/problem/A</a></p><h2 id="解答">解答</h2><p>实际上是最大化首充优惠，是一个标准的 <spanclass="math inline">\(0\text-1\)</span> 背包问题。</p><figure class="highlight cpp"><figcaption><span>CC2020-ChangChun-A.cpp >folded</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ::std::cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); </span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    ::std::cin &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> f[<span class="number">2020</span>];</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> w[] = &#123;<span class="number">8</span>, <span class="number">18</span>, <span class="number">28</span>, <span class="number">58</span>, <span class="number">128</span>, <span class="number">198</span>, <span class="number">388</span>&#125;;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> v[] = &#123;<span class="number">1</span>, <span class="number">6</span> , <span class="number">28</span>, <span class="number">88</span>, <span class="number">198</span>, <span class="number">328</span>, <span class="number">648</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = n; ~j; --j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= v[i]) &#123;</span><br><span class="line">                f[j] = ::std::<span class="built_in">max</span>(f[j], f[j - v[i]] + w[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ::std::cout &lt;&lt; n * <span class="number">10</span> + f[n] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;购买优惠券，以下是首充优惠。&lt;span class=&quot;hidden&quot;&gt;手冲，嘿嘿
+🤤。&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;\[
+\begin{array}{|c|c|c|} \hline \text{Price (RMB yuan)} &amp;amp; \text{Normal
+amount (coupons)} &amp;amp; \text{First recharge reward (coupons)} \\ \hline
+1 &amp;amp; 10 &amp;amp; 8 \\ \hline 6 &amp;amp; 60 &amp;amp; 18 \\ \hline 28 &amp;amp; 280
+&amp;amp; 28 \\ \hline 88 &amp;amp; 880 &amp;amp; 58 \\ \hline 198 &amp;amp; 1980 &amp;amp;
+128 \\ \hline 328 &amp;amp; 3280 &amp;amp; 198 \\ \hline 648 &amp;amp; 6480 &amp;amp;
+388 \\ \hline \end{array}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;例如 &lt;span class=&quot;math inline&quot;&gt;\(￥100\)&lt;/span&gt; 可以购买 &lt;span
+class=&quot;math inline&quot;&gt;\(\underbrace{880 + 58}_{88} + \underbrace{60 +
+18}_{6} + \underbrace{10 + 8}_{1} + 5 \times 10 = 1084\)&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="acm" scheme="https://tau.gay/acm/"/>
+    
+    <category term="cc" scheme="https://tau.gay/cc/"/>
+    
+    <category term="2020" scheme="https://tau.gay/cc/2020/"/>
+    
+    <category term="changchun" scheme="https://tau.gay/cc/2020/changchun/"/>
+    
+    
+    <category term="dp" scheme="https://tau.gay/tags/dp/"/>
+    
+    <category term="背包" scheme="https://tau.gay/tags/%E8%83%8C%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CC2020-ChangChun-D</title>
+    <link href="https://tau.gay/cc/2020/changchun/d/"/>
+    <id>https://tau.gay/cc/2020/changchun/d/</id>
+    <published>2022-09-23T14:54:21.000Z</published>
+    <updated>2022-09-23T18:20:21.728Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p>定义函数</p><p><span class="math display">\[a_n = \begin{cases} 1, &amp; n = 0 \\ c \cdot \max\limits_{0 \le i &lt;n} a_{n \operatorname{\&amp;} i}, &amp; \text{otherwise} \end{cases},\]</span></p><p>求 <span class="math inline">\(\left(\displaystyle\sum\limits_{i=0}^n a_i \right) \bmod (10^9+7)\)</span></p><span id="more"></span><p><a href="https://codeforces.com/gym/102832/problem/D"class="uri">https://codeforces.com/gym/102832/problem/D</a></p><ul><li><span class="math inline">\(0 \le n \lt 2 ^ { 3000 }\)</span></li><li><span class="math inline">\(0 \le c \le 10 ^ 9\)</span></li></ul><h2 id="解答">解答</h2><p>尝试手推 <span class="math inline">\(\{a\}\)</span> 的前几项（<spanclass="math inline">\(c = 2\)</span>）：</p><table><thead><tr class="header"><th style="text-align: left;">下标</th><th style="text-align: left;"><spanclass="math inline">\(0\)</span></th><th style="text-align: left;"><spanclass="math inline">\(1\)</span></th><th style="text-align: left;"><spanclass="math inline">\(2\)</span></th><th style="text-align: left;"><spanclass="math inline">\(3\)</span></th><th style="text-align: left;"><spanclass="math inline">\(4\)</span></th><th style="text-align: left;"><spanclass="math inline">\(5\)</span></th><th style="text-align: left;"><spanclass="math inline">\(6\)</span></th><th style="text-align: left;"><spanclass="math inline">\(7\)</span></th></tr></thead><tbody><tr class="odd"><td style="text-align: left;">二进制</td><td style="text-align: left;"><spanclass="math inline">\(0\)</span></td><td style="text-align: left;"><spanclass="math inline">\(1\)</span></td><td style="text-align: left;"><spanclass="math inline">\(10\)</span></td><td style="text-align: left;"><spanclass="math inline">\(11\)</span></td><td style="text-align: left;"><spanclass="math inline">\(100\)</span></td><td style="text-align: left;"><spanclass="math inline">\(101\)</span></td><td style="text-align: left;"><spanclass="math inline">\(110\)</span></td><td style="text-align: left;"><spanclass="math inline">\(111\)</span></td></tr><tr class="even"><td style="text-align: left;">数值</td><td style="text-align: left;"><spanclass="math inline">\(1\)</span></td><td style="text-align: left;"><spanclass="math inline">\(2\)</span></td><td style="text-align: left;"><spanclass="math inline">\(2\)</span></td><td style="text-align: left;"><spanclass="math inline">\(4\)</span></td><td style="text-align: left;"><spanclass="math inline">\(2\)</span></td><td style="text-align: left;"><spanclass="math inline">\(4\)</span></td><td style="text-align: left;"><spanclass="math inline">\(4\)</span></td><td style="text-align: left;"><spanclass="math inline">\(8\)</span></td></tr></tbody></table><p>即 <span class="math inline">\(a_i = c ^{\operatorname{popcount}(i)}\)</span>。 首先注意到 <spanclass="math inline">\(n\)</span> 全一的情况是二项式定理的经典形式：</p><p><span class="math display">\[\sum_{i = 0}^n \binom{n}{i} p ^ i = (1 + p) ^ n\]</span></p><p>而如果有某些位不是 <spanclass="math inline">\(1\)</span>，则可以按位拆分为多个上述的和式，即对于所有<span class="math inline">\(n_i = 1\)</span> 的位：</p><p><span class="math display">\[\verb|calc|(i) = \left( (c + 1) ^ {N - i - 1} + c \times \verb|calc|(i -1) \right)\]</span></p><figure class="highlight cpp"><figcaption><span>CC2020-ChangChun-D.cpp >folded</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> n[<span class="number">3333</span>];</span><br><span class="line"><span class="type">int</span> c, f = <span class="number">1</span>, g = <span class="number">1</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1E9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s%d&quot;</span>, n + <span class="number">1</span>, &amp;c);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N = <span class="built_in">strlen</span>(n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = N; i; --i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n[i] == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">            f = (<span class="number">1LL</span> * f * c + g) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        g = <span class="number">1LL</span> * g * (c + <span class="number">1</span>) % mod;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, f);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;定义函数&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;\[
+a_n = \begin{cases} 1, &amp;amp; n = 0 \\ c \cdot \max\limits_{0 \le i &amp;lt;
+n} a_{n \operatorname{\&amp;amp;} i}, &amp;amp; \text{otherwise} \end{cases},
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;求 &lt;span class=&quot;math inline&quot;&gt;\(\left(
+\displaystyle\sum\limits_{i=0}^n a_i \right) \bmod (10^9+7)\)&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="acm" scheme="https://tau.gay/acm/"/>
+    
+    <category term="cc" scheme="https://tau.gay/cc/"/>
+    
+    <category term="2020" scheme="https://tau.gay/cc/2020/"/>
+    
+    <category term="changchun" scheme="https://tau.gay/cc/2020/changchun/"/>
+    
+    
+    <category term="组合" scheme="https://tau.gay/tags/%E7%BB%84%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CC2020-ChangChun-F</title>
+    <link href="https://tau.gay/cc/2020/changchun/f/"/>
+    <id>https://tau.gay/cc/2020/changchun/f/</id>
+    <published>2022-09-23T14:54:21.000Z</published>
+    <updated>2022-09-23T19:40:48.572Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题意">题意</h2><p><span class="math display">\[\sum\limits_{i=1}^n\sum\limits_{j=i+1}^n [a_i \oplus a_j =a_{\operatorname{lca}(i, j)}] (i \oplus j)\]</span></p><span id="more"></span><p>https://codeforces.com/gym/102832/problem/F</p><del>欢迎收看大型节目——全场都会 DSU on tree。</del><ul><li><span class="math inline">\(2 \le n \le 10 ^ 5\)</span></li><li><span class="math inline">\(a \le a_i \le 10^6\)</span></li></ul><h2 id="解答">解答</h2><p>首先拆位。</p><p>子树静态信息统计，选用 DSU on tree 为佳。直接计算以当前点为 <spanclass="math inline">\(\operatorname{lca}\)</span> 的贡献。记下来每一位的<span class="math inline">\(0/1\)</span> 数量之后。</p><figure class="highlight cpp"><figcaption><span>CC2020-ChangChun-F.cpp >folded</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">main</span><span class="params">()</span> -&gt; <span class="type">int</span> </span>&#123;</span><br><span class="line">    ::std::cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    ::std::cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    ::<span class="function">std::vector <span class="title">w</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123; ::std::cin &gt;&gt; w[i]; &#125;</span><br><span class="line"></span><br><span class="line">    ::<span class="function">std::vector <span class="title">g</span><span class="params">(n + <span class="number">1</span>, ::std::vector(<span class="number">0</span>, <span class="number">0</span>))</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        ::std::cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        g[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">        g[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ::<span class="function">std::vector <span class="title">size</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span>, <span class="title">son</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    ::std::function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; dfs = [&amp;](<span class="type">int</span> u, <span class="type">int</span> p) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">        size[u] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> v : g[u]) <span class="keyword">if</span> (v != p) &#123;</span><br><span class="line">            <span class="built_in">dfs</span>(v, u);</span><br><span class="line">            size[u] += size[v];</span><br><span class="line">            <span class="keyword">if</span> (size[v] &gt; size[son[u]]) &#123;</span><br><span class="line">                son[u] = v;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans &#123;  &#125;;</span><br><span class="line">    <span class="type">int</span> cur &#123;  &#125;, top &#123;  &#125;;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> cnt[<span class="number">1000110</span>][<span class="number">21</span>][<span class="number">2</span>] &#123;  &#125;;</span><br><span class="line">    ::<span class="function">std::vector <span class="title">stk</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    ::std::function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>, <span class="type">bool</span>)&gt; dsu = [&amp;](<span class="type">int</span> u, <span class="type">int</span> p, <span class="type">bool</span> kp) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> v : g[u]) <span class="keyword">if</span> (v != p &amp;&amp; v != son[u]) <span class="built_in">dsu</span>(v, u, <span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">if</span> (son[u]) <span class="built_in">dsu</span>(son[u], u, <span class="literal">true</span>), cur = son[u];</span><br><span class="line">        ::std::function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>)&gt; calc = [&amp;](<span class="type">int</span> u, <span class="type">int</span> p, <span class="type">int</span> root) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (p == root) &#123;</span><br><span class="line">                <span class="keyword">for</span> (; top; top --) &#123;</span><br><span class="line">                    <span class="type">int</span> t = stk[top];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i) &#123;</span><br><span class="line">                        cnt[w[t]][i][t &gt;&gt; i &amp; <span class="number">1</span>] += <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i) &#123;</span><br><span class="line">                <span class="comment">// 此处小心越界</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="type">int</span> p = w[u] ^ w[root]; p &lt;= <span class="number">1000000</span>) &#123;</span><br><span class="line">                    ans += <span class="number">1LL</span> * cnt[p][i][~u &gt;&gt; i &amp; <span class="number">1</span>] * (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stk[ ++ top ] = u;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> v : g[u]) <span class="keyword">if</span> (v != p &amp;&amp; v != cur) <span class="built_in">calc</span>(v, u, root);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">calc</span>(u, p, u), cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; top; -- top) &#123;</span><br><span class="line">            <span class="type">int</span> t = stk[top];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i) &#123;</span><br><span class="line">                cnt[w[t]][i][t &gt;&gt; i &amp; <span class="number">1</span>] ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ::std::function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; del = [&amp;](<span class="type">int</span> u, <span class="type">int</span> p) -&gt; <span class="type">void</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i) cnt[w[u]][i][u &gt;&gt; i &amp; <span class="number">1</span>] -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> v : g[u]) <span class="keyword">if</span> (v != p &amp;&amp; v != cur) <span class="built_in">del</span>(v, u);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">if</span> (!kp) <span class="built_in">del</span>(u, p);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">dsu</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    ::std::cout &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;\[
+\sum\limits_{i=1}^n\sum\limits_{j=i+1}^n [a_i \oplus a_j =
+a_{\operatorname{lca}(i, j)}] (i \oplus j)
+\]&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="acm" scheme="https://tau.gay/acm/"/>
+    
+    <category term="cc" scheme="https://tau.gay/cc/"/>
+    
+    <category term="2020" scheme="https://tau.gay/cc/2020/"/>
+    
+    <category term="changchun" scheme="https://tau.gay/cc/2020/changchun/"/>
+    
+    
+    <category term="DSU on tree" scheme="https://tau.gay/tags/DSU-on-tree/"/>
+    
+    <category term="DFS" scheme="https://tau.gay/tags/DFS/"/>
+    
+  </entry>
   
   <entry>
     <title>Diary_20220918</title>
@@ -557,9 +666,9 @@ LIS\)&lt;/span&gt;（位置不同就算做不同）？&lt;/p&gt;</summary>
     <category term="1313" scheme="https://tau.gay/cf/1313/"/>
     
     
-    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
-    
     <category term="dp" scheme="https://tau.gay/tags/dp/"/>
+    
+    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
     
   </entry>
   
@@ -591,9 +700,9 @@ a_k\)&lt;/span&gt;
     <category term="1313" scheme="https://tau.gay/cf/1313/"/>
     
     
-    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
-    
     <category term="dp" scheme="https://tau.gay/tags/dp/"/>
+    
+    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
     
   </entry>
   
@@ -892,9 +1001,9 @@ h_i)\)&lt;/span&gt;。求出 &lt;span class=&quot;math inline&quot;&gt;\(w_i, h_
     <category term="4" scheme="https://tau.gay/cf/4/"/>
     
     
-    <category term="二维偏序" scheme="https://tau.gay/tags/%E4%BA%8C%E7%BB%B4%E5%81%8F%E5%BA%8F/"/>
-    
     <category term="dp" scheme="https://tau.gay/tags/dp/"/>
+    
+    <category term="二维偏序" scheme="https://tau.gay/tags/%E4%BA%8C%E7%BB%B4%E5%81%8F%E5%BA%8F/"/>
     
   </entry>
   
@@ -1500,9 +1609,9 @@ class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt; 的最小步数。&lt;/p&gt;
     <category term="1407" scheme="https://tau.gay/cf/1407/"/>
     
     
-    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
-    
     <category term="dp" scheme="https://tau.gay/tags/dp/"/>
+    
+    <category term="nge" scheme="https://tau.gay/tags/nge/"/>
     
   </entry>
   
@@ -1876,9 +1985,9 @@ class=&quot;math inline&quot;&gt;\(\in [1, 2]\)&lt;/span&gt;。&lt;/p&gt;</summa
     <category term="3" scheme="https://tau.gay/cf/3/"/>
     
     
-    <category term="贪心" scheme="https://tau.gay/tags/%E8%B4%AA%E5%BF%83/"/>
-    
     <category term="背包" scheme="https://tau.gay/tags/%E8%83%8C%E5%8C%85/"/>
+    
+    <category term="贪心" scheme="https://tau.gay/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
